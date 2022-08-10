@@ -7,11 +7,11 @@ $hash = compute-file-hash "D:\powershell_FIM\Files\test.txt"
 
 
 Function remove-baseline () {
-    $current_baseline = Test-Path -Path ./baseline.txt
+    $current_baseline = Test-Path -Path D:\powershell_FIM\baseline.txt
 
     if($current_baseline) {
     # if the current baseline exits then we will delete it
-    Remove-Item -Path ./baseline.txt
+    Remove-Item -Path D:\powershell_FIM\baseline.txt
     }
 }
 
