@@ -18,7 +18,7 @@ Function remove-baseline () {
 
 Write-Host "what would you like to do?"
 
-Write-Host "A) Collect new baseline?"
+Write-Host "A) Collect new Baseline?"
 Write-Host "B) Begin monitoring files with Baseline?"
 
 $response = Read-Host -Prompt "Please give your input: "
@@ -38,7 +38,7 @@ if ($response -eq "A".ToUpper()) {
     #calculating hashes for each file
     foreach ($file in $files) {
     $hash = compute-file-hash $files.FullName
-    "$($hash.Path)|$($hash.Hash)" | Out-File -FilePath .\baseline.txt -Append
+    "$($hash.Path)|$($hash.Hash)" | Out-File -FilePath D:\powershell_FIM\baseline.txt -Append
     }
 }
 
