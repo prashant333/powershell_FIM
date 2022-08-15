@@ -1,5 +1,6 @@
 import os
 import hashlib
+import time
 # reading file or folder for FIM
 
 path = "D:/powershell_FIM/Files"
@@ -20,5 +21,28 @@ def newhash(directory):
 
 
 newhash(path)
+"""
+
+newhash(path)
 for k, v in hash_value.items():
     print(k, v)
+    
+"""
+
+
+def hash_compare(check_dir_name, old_hash):
+    new_hash = {}
+    files_name = os.listdir(check_dir_name)
+    for i in range(len(files_name)):
+        new_hash[files_name[i]] = hashlib.sha3_512(files_name[i].encode('utf-8')).hexdigest()
+
+    if old_hash == new_hash:
+        print("File integrity intact!")
+    else:
+        print("File tampered.")
+
+
+while True:
+    time.sleep(2)
+    hash_compare(path, hash_value)
+
